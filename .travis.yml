@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run -e CI=true brunokarpo/react-test npm run test
 
-after_sucess:
+after_success:
   - docker build -t brunokarpo/multi-client ./client
   - docker build -t brunokarpo/multi-nginx ./nginx
   - docker build -t brunokarpo/multi-server ./server
